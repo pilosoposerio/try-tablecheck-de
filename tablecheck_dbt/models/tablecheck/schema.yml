@@ -1,0 +1,20 @@
+sources:
+  - name: tablecheck
+    schema: main
+    tables:
+      - name: raw_data
+        columns:
+          - name: restaurant_names
+            description: "name of the restaurant"
+          - name: food_names
+            description: "name of the food"
+          - name: first_name
+            description: "name of the customer"
+          - name: food_cost
+            description: "price of the food"
+          - name: filename
+            description: "name of the source file"
+          - name: loaded_at
+            description: "timestamp of when the data was loaded"
+          - name: transaction_id
+            description: "unique identifier for the transaction generated during load time"

@@ -1,0 +1,13 @@
+tablecheck_dbt:
+  outputs:
+    dev:
+      type: duckdb
+      path: tablecheck-dev.duckdb
+      threads: 1
+
+    prod:
+      type: duckdb
+      path: /data/warehouse/tablecheck.duckdb
+      threads: 4
+
+  target: dev
