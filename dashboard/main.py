@@ -116,6 +116,11 @@ if __name__ == "__main__":
         .sum()
         .sort_values("total_revenue", ascending=False)
     )
+    most_frequent_customer = (
+        patrons.groupby("first_name")
+        .sum()
+        .sort_values("visit_count", ascending=False)
+    )
     restaurant_top_stats = [
         {
             "label": "Most Visited",
@@ -152,6 +157,12 @@ if __name__ == "__main__":
             "label": "Most Profitable Food",
             "value": best_profitable_food.head(1).index[0],
             "delta": f"${best_profitable_food.head(1).total_revenue[0]}",
+            "delta_color": "off",
+        },
+        {
+            "label": "Most Frequent Customer",
+            "value": most_frequent_customer.head(1).index[0],
+            "delta": int(most_frequent_customer.head(1).visit_count[0]),
             "delta_color": "off",
         },
     ]
