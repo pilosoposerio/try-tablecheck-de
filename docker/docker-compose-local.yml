@@ -30,6 +30,8 @@ services:
       - "${PWD}/plugins:/usr/local/airflow/plugins"
       - "${PWD}/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
+      - "${PWD}/data:/data/"
+      - "${PWD}/tablecheck_dbt:/tablecheck_dbt"
     ports:
       - "8080:8080"
     command: local-runner
